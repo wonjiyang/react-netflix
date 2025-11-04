@@ -12,26 +12,22 @@ function AppLayout() {
   const searchRef = useRef(null);
   const notificationRef = useRef(null);
 
-  // 🔹 스크롤 시 Navbar 배경색 변경
   useEffect(() => {
     const handleScroll = () => setShowBackground(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // 🔹 검색창 토글
   const toggleSearch = () => {
     setShowSearch(!showSearch);
     setShowNotifications(false);
   };
 
-  // 🔹 알림 토글
   const toggleNotifications = () => {
     setShowNotifications(!showNotifications);
     setShowSearch(false);
   };
 
-  // 🔹 검색창 외 클릭 시 자동 닫힘
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -51,14 +47,13 @@ function AppLayout() {
   return (
     <div>
       <Navbar
-        expand="lg"
+        expand="md"
         className={`netflix-navbar fixed-top ${
           showBackground ? 'scrolled' : ''
         }`}
         variant="dark"
       >
         <Container fluid>
-          {/* 🔹 로고 */}
           <Navbar.Brand as={Link} to="/" className="netflix-logo">
             <img
               src="/logo.png"
@@ -85,7 +80,6 @@ function AppLayout() {
             </Nav>
 
             <Form className="d-flex align-items-center">
-              {/* 🔍 검색 */}
               <div className="search-container" ref={searchRef}>
                 <Search
                   className="netflix-search-icon"
@@ -102,7 +96,6 @@ function AppLayout() {
                 )}
               </div>
 
-              {/* 🔔 알림 */}
               <div className="notification-container" ref={notificationRef}>
                 <Bell
                   className="netflix-bell-icon"
@@ -116,7 +109,6 @@ function AppLayout() {
                 )}
               </div>
 
-              {/* 👤 프로필 자리 */}
               <div className="netflix-profile"></div>
             </Form>
           </Navbar.Collapse>
