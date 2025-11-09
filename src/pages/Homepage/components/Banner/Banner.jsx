@@ -82,15 +82,6 @@ export default function FullAutoBannerKo() {
         );
       })}
 
-      {/* 화살표 */}
-      <button className="arrow left" onClick={prevSlide}>
-        &lt;
-      </button>
-      <button className="arrow right" onClick={nextSlide}>
-        &gt;
-      </button>
-
-      {/* dots */}
       <div className="dots">
         {movies.map((_, idx) => (
           <span

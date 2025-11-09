@@ -1,0 +1,27 @@
+.netflix-section {
+  margin: 1.5rem 0;
+}
+
+.netflix-title {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.netflix-carousel {
+  padding: 0 0.5rem;
+}
+
+.netflix-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.netflix-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
