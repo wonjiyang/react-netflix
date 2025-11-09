@@ -1,4 +1,4 @@
-.netflix-card {
+.movie-card {
   position: relative;
   width: 220px;
   aspect-ratio: 2/3;
@@ -11,26 +11,24 @@
   will-change: transform, box-shadow;
 }
 
-.netflix-card:hover {
+.movie-card:hover {
   transform: translateY(-20px) scale(1.08);
   z-index: 15;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
 }
 
-/* 이미지 투명도 효과 */
-.netflix-card-img {
+.movie-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: opacity 0.4s ease;
 }
 
-.netflix-card:hover .netflix-card-img {
+.movie-card:hover .movie-card-img {
   opacity: 0.25;
 }
 
-/* 오버레이 효과 */
-.netflix-card-overlay {
+.movie-card-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, transparent 80%);
@@ -43,23 +41,23 @@
   transition: opacity 0.4s ease;
 }
 
-.netflix-card:hover .netflix-card-overlay {
+.movie-card:hover .movie-card-overlay {
   opacity: 1;
 }
 
-/* 텍스트 & 뱃지 */
-.netflix-card-title {
+.movie-card-title {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.4rem;
   line-height: 1.3;
+  word-break: keep-all;
 }
 
-.netflix-card-badges {
+.movie-card-badges {
   margin-bottom: 0.5rem;
 }
 
-.netflix-card-info {
+.movie-card-info {
   font-size: 0.85rem;
   color: #ccc;
   display: flex;
@@ -67,25 +65,24 @@
   gap: 3px;
 }
 
-.netflix-card-info p {
+.movie-card-info p {
   margin: 0;
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-/* 모바일 반응형 */
 @media (max-width: 768px) {
-  .netflix-card {
+  .movie-card {
     width: 160px;
     transform: translateY(0) scale(1);
   }
 
-  .netflix-card:hover {
+  .movie-card:hover {
     transform: translateY(-10px) scale(1.05);
   }
 
-  .netflix-card-title {
+  .movie-card-title {
     font-size: 0.9rem;
   }
 }
@@ -93,4 +90,16 @@
 .react-multi-carousel-item:hover {
   z-index: 20 !important;
   overflow: visible !important;
+}
+
+@media (max-width: 480px) {
+  .movie-card-title {
+    font-size: 0.7rem;
+  }
+  .badge {
+    font-size: 0.6rem !important;
+  }
+  .movie-card-info {
+    font-size: 0.6rem;
+  }
 }

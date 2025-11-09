@@ -15,12 +15,12 @@ function MovieCard({ movie }) {
     .filter(Boolean);
 
   return (
-    <div className="netflix-card">
-      <img src={imgUrl} alt={movie.title} className="netflix-card-img" />
-      <div className="netflix-card-overlay">
-        <h5 className="netflix-card-title">{movie.title}</h5>
+    <div className="movie-card">
+      <img src={imgUrl} alt={movie.title} className="movie-card-img" />
+      <div className="movie-card-overlay">
+        <h5 className="movie-card-title">{movie.title}</h5>
 
-        <div className="netflix-card-badges">
+        <div className="movie-card-badges">
           {genres.map((genre) => (
             <Badge key={genre} bg="danger" className="me-1">
               {genre}
@@ -28,7 +28,7 @@ function MovieCard({ movie }) {
           ))}
         </div>
 
-        <div className="netflix-card-info">
+        <div className="movie-card-info">
           <p>
             <FaStar /> {movie.vote_average.toFixed(1)}
           </p>

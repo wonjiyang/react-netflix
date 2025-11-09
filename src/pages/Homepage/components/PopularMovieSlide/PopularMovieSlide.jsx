@@ -37,8 +37,8 @@ function PopularMovieSlide() {
   if (isError) return <Alert variant="danger">{error.message}</Alert>;
 
   return (
-    <div className="netflix-section">
-      <h3 className="netflix-title">보고 또 봐도 좋은 인기 시리즈</h3>
+    <div className="movie-card-sec">
+      <h3 className="movie-title">보고 또 봐도 좋은 인기 시리즈</h3>
       <Carousel
         responsive={responsive}
         infinite

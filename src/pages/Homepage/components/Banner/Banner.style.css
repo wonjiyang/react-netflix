@@ -252,6 +252,8 @@
   }
   .banner-text-area h1 {
     font-size: 1em;
+    width: 160px;
+    word-break: keep-all;
   }
   .banner-text-area p {
     font-size: 0.4em;

@@ -21,7 +21,6 @@ const fetchMoviesByGenre = async (genreId) => {
   return res.data;
 };
 
-// Error Boundary
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -67,8 +66,8 @@ function GenreCarousel({ genreId, title }) {
     return <Alert variant="warning">{title} 영화가 없습니다.</Alert>;
 
   return (
-    <div className="netflix-section">
-      <h3 className="netflix-title">{title}</h3>
+    <div className="movie-card-sec">
+      <h3 className="movie-title">{title}</h3>
       <Carousel
         responsive={responsive}
         infinite

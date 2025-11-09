@@ -48,18 +48,12 @@ function AppLayout() {
     <div>
       <Navbar
         expand="md"
-        className={`netflix-navbar fixed-top ${
-          showBackground ? 'scrolled' : ''
-        }`}
+        className={`navbar fixed-top ${showBackground ? 'scrolled' : ''}`}
         variant="dark"
       >
         <Container fluid>
-          <Navbar.Brand as={Link} to="/" className="netflix-logo">
-            <img
-              src="/logo.png"
-              alt="Netflix Logo"
-              className="netflix-logo-img"
-            />
+          <Navbar.Brand as={Link} to="/" className="logo">
+            <img src="/logo.png" alt="Netflix Logo" className="logo-img" />
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -109,7 +103,7 @@ function AppLayout() {
                 )}
               </div>
 
-              <div className="netflix-profile"></div>
+              <div className="profile"></div>
             </Form>
           </Navbar.Collapse>
         </Container>
