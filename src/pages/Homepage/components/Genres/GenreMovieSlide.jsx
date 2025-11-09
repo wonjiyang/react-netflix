@@ -7,7 +7,6 @@ import MovieCard from '../MovieCard/MovieCard';
 import api from '../../../../utils/api';
 import './GenreMovie.style.css';
 
-// 반응형 설정
 const responsive = {
   desktop: { breakpoint: { max: 3000, min: 1280 }, items: 6 },
   laptop: { breakpoint: { max: 1280, min: 1024 }, items: 5 },
@@ -15,7 +14,6 @@ const responsive = {
   mobile: { breakpoint: { max: 600, min: 0 }, items: 2 },
 };
 
-// 장르별 API 호출 함수
 const fetchMoviesByGenre = async (genreId) => {
   const res = await api.get('/discover/movie', {
     params: { with_genres: genreId, language: 'ko-KR', page: 1 },
@@ -50,7 +48,6 @@ class ErrorBoundary extends React.Component {
   }
 }
 
-// 공통 Carousel 컴포넌트
 function GenreCarousel({ genreId, title }) {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: [`genre-${genreId}-movies`],
@@ -88,7 +85,6 @@ function GenreCarousel({ genreId, title }) {
   );
 }
 
-// 최종 통합 컴포넌트
 export default function GenreMovieSlide() {
   return (
     <ErrorBoundary>
